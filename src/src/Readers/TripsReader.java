@@ -10,7 +10,7 @@ import java.util.List;
 public class TripsReader {
     static List<Trips> tripsList = new ArrayList();
 
-        public static void readData(String path){
+        public static List<Trips> readData(String path){
             try {
                 BufferedReader reader = new BufferedReader(new FileReader(path));
                 String newLine;
@@ -41,10 +41,11 @@ public class TripsReader {
                 }
 
             } catch (FileNotFoundException e) {
-                System.out.println("File not found!");
+                System.out.println("Trip File not found!");
             } catch (IOException e) {
                 System.out.println("IO Exception at " + path);
             }
+            return tripsList;
         }
 
         private static int findIndexInArray(String columnName, String[] header) {

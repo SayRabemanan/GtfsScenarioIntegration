@@ -18,6 +18,8 @@ public class Trips {
         setRoute_id(route_id);
     }
 
+    public Trips() {}
+
 
     public int getTrip_id() {
         return trip_id;
